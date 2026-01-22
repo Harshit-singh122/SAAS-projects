@@ -25,7 +25,7 @@ connectDB();
 //ROUTES
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
-app.use('/api/invoices', invoiceRouter);
+app.use('/api/invoice', invoiceRouter);
 app.use('/api/business-profile', bussinessProfileRouter);
 app.use('/api/ai-invoice', AiInvoiceRouter);
 
