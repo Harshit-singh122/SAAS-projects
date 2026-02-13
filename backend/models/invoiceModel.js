@@ -1,48 +1,45 @@
 import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema({
-    id: { 
-            type: String, 
-            required: true 
-        },
-    description: { 
-            type: String, 
-            required: true 
-        },
-    qty: { 
-            type: Number, 
-            required: true,
-            default: 1 
-        },
-    unitPrice: { 
-            type: Number, 
-            required: true     
-        },
     
+    description: { 
+        type: String, 
+        required: true 
+    },
+
+    qty: { 
+        type: Number, 
+        default: 1 
+    },
+
+    unitPrice: { 
+        type: Number, 
+        default: 0 
+    }
 });
+
 
 // Invoice Schema
 const invoiceSchema = new mongoose.Schema({
-    owner: { 
-            type:String,  
-            required: true,
-            index:true
-        },
-    invoiceNumber: { 
-            type: String, 
-            required: true, 
-            index: true 
-        },
-    issuedate: { 
-            type: String, 
-            default:" " 
-            
-        },
-    dueDate: { 
-            type: String, 
-            default:" " 
-                 
-        },
+    owner: {
+        type: String,
+        required: true,
+        index: true
+    },
+    invoiceNumber: {
+        type: String,
+        required: true,
+        index: true
+    },
+    issueDate: {                      // ✅ SAME NAME
+        type: String,
+        default: ""
+    },
+    dueDate: {
+        type: String,
+        default: " "
+
+    },
     //Business info
     fromBusinessName: { type: String, default: "" },
     fromEmail: { type: String, default: "" },
@@ -53,16 +50,15 @@ const invoiceSchema = new mongoose.Schema({
 
     // Client info
     client: {
-      name: { type: String, default: "" },
-      email: { type: String, default: "" },
-      address: { type: String, default: "" },
-      phone: { type: String, default: "" },
+        name: { type: String, default: "" },
+        email: { type: String, default: "" },
+        address: { type: String, default: "" },
+        phone: { type: String, default: "" },
     },
 
-    item:{
+    items: {                          // ✅ SAME NAME
         type: [itemSchema],
         default: []
-
     },
 
     currency: { type: String, default: "INR" },
@@ -82,8 +78,8 @@ const invoiceSchema = new mongoose.Schema({
     subtotal: { type: Number, default: 0 },
     tax: { type: Number, default: 0 },
     total: { type: Number, default: 0 },
-},{
-    timestamps: true   
+}, {
+    timestamps: true
 });
 
 

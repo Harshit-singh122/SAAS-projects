@@ -35,8 +35,8 @@ export async function createBusinessProfile(req, res) {
 
         const data = {
             owner: userId,
-            businessName: body.businessName || "",
-            email: body.email || "",
+            businessName: body.businessName,
+            email: body.email,
             address: body.address || "",
             phone: body.phone || "",
             gstNumber: body.gstNumber || "",
@@ -55,7 +55,7 @@ export async function createBusinessProfile(req, res) {
 
         return res.status(201).json({ success: true, data: profile });
     } catch (err) {
-        console.error("createBusinessProfile error:", err);
+        console.error("createBusiness Profile error:", err);
         return res.status(500).json({ success: false, message: "Server error" });
     }
 }
@@ -72,8 +72,8 @@ export async function updateBusinessProfile(req, res) {
         const update = {
             businessName: body.businessName,
             email: body.email,
-            address: body.address,
-            phone: body.phone,
+            address: body.address ?? undefined,
+            phone: body.phone ?? undefined,
             gstNumber: body.gstNumber,
             defaultTaxPercent: body.defaultTaxPercent,
             ...fileUrls,

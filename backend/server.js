@@ -1,38 +1,41 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import { clerkMiddleware } from '@clerk/express'
+import { clerkMiddleware } from '@clerk/express';
 import { connectDB } from './config/db.js';
 import path from 'path';
+
 import invoiceRouter from './routes/invoiceRouter.js';
 import bussinessProfileRouter from './routes/bussinessProfileRoutes.js';
 import AiInvoiceRouter from './routes/AiInvoiceRouter.js';
 
 const app = express();
-const PORT =  4000;
+const PORT = 4000;
 
-//MIDLEWARE
+// Middleware
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "http://localhost:5174"],
   credentials: true
 }));
-app.use(clerkMiddleware())
+app.use(clerkMiddleware());
 app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ extended: true, limit: '20mb' }));
-//DB CONNECTION
+
+// DB
 connectDB();
 
-//ROUTES
+// Static
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
+// Routes
 app.use('/api/invoice', invoiceRouter);
 app.use('/api/business-profile', bussinessProfileRouter);
 app.use('/api/ai-invoice', AiInvoiceRouter);
 
-app.get('/', cors(), (req, res) => {
+app.get('/', (req, res) => {
   res.send('API is working');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
