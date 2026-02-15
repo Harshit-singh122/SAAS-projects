@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 
-import Home from "./pages/home.jsx";
-import Dashboard from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/pages/Dashboard.jsx";
+import Home from "./pages/Home.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 
 import AppShell from "./components/AppShell.jsx";
 import CreateInvoice from "./pages/CreateInvoice.jsx";
