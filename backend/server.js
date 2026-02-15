@@ -17,10 +17,13 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://YOUR_FRONTEND_NAME.vercel.app"
+    "https://saas-projects-git-main-harshit-singh122s-projects.vercel.app"
   ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 
 app.use(clerkMiddleware());
 app.use(express.json({ limit: '20mb' }));
