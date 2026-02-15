@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
-import { invoicePreviewStyles } from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/assets/dummystyle.js";
+import { invoicePreviewStyles } from "../assets/dummystyle.js";
 
 const API_BASE = "http://localhost:4000";
 const PROFILE_ENDPOINT = `${API_BASE}/api/businessProfile/me`;
