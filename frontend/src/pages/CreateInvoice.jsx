@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
-import StatusBadge from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/components/StatusBadge.jsx";
-import {
+import StatusBadge from "../components/StatusBadge.jsx";import {
   createInvoiceStyles,
   createInvoiceIconColors,
   createInvoiceCustomStyles,
