@@ -7,7 +7,8 @@ import StatusBadge from "../components/StatusBadge.jsx";import {
   createInvoiceCustomStyles,
 } from "../assets/dummystyle.js";
 /* ---------- API BASE ---------- */
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 
 /* ---------- storage helpers (unchanged) ---------- */
 /* ----------------- frontend-only: normalize image URLs ----------------- */
