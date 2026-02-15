@@ -5,8 +5,7 @@ import StatusBadge from "../components/StatusBadge.jsx";import {
   createInvoiceStyles,
   createInvoiceIconColors,
   createInvoiceCustomStyles,
-} from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/assets/dummystyle.js";
-
+} from from "../assets/dummystyle.js";
 /* ---------- API BASE ---------- */
 const API_BASE = "http://localhost:4000";
 
