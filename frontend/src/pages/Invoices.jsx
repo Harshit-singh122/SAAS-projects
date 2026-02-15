@@ -1,9 +1,9 @@
 import React, { useMemo, useState, useEffect, useCallback } from "react";
 import StatusBadge from "../components/StatusBadge";
-import AiInvoiceModal from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/components/AiInvoiceModel.jsx";
+import AiInvoiceModal from "../components/AiInvoiceModel.jsx";
 import GeminiIcon from "../components/GeminiIcon";
 import { useNavigate } from "react-router-dom";
-import { invoicesStyles } from "/Users/harshitsingh/Desktop/SAAS project/frontend/src/assets/dummystyle.js";
+import { invoicesStyles } from "../assets/dummystyle.js";
 import { useAuth } from "@clerk/clerk-react";
 
 const API_BASE = "http://localhost:4000";
