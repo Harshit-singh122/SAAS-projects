@@ -1,4 +1,4 @@
-# SAAS-projects
+
 # SAAS Project — AI Invoice
 
 This repository contains a full-stack SaaS example for generating and managing AI-assisted invoices. It includes a `backend` (Express + Node) and a `frontend` (React + Vite) application.
@@ -99,5 +99,4 @@ If you'd like, I can also:
 - add a short `CONTRIBUTING.md` and `LICENSE` file
 - create a tested GitHub Actions workflow to build frontend and backend
 
-Happy to tailor the README for a public GitHub repo (remove internal notes, add badges, etc.).
-# SAAS-projects
+
